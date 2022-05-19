@@ -1,0 +1,279 @@
+// MOBILE FIRST
+
+@import "valores-acento.scss";
+
+header {
+    background-color: red;
+}
+
+button {
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid $gradient;
+    box-shadow: 2px 2px 10px $gradient;
+    color: #fff;
+    background-color: #9D5DC3;
+    transition: all 0.7s;
+    margin-top: 35px;
+}
+
+button:hover {
+    background-color: #774792;
+    transform: scale(1.05);
+    transition: all 0.7s;
+}
+
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+
+.color-acento{
+    color: #9D5DC3;
+}
+
+// HEADER
+
+header{
+    background-color: rgb(245,245,245);
+.logo {
+    margin: 0;
+    padding: 25px 30px;
+    font-weight: bold;
+    color: map-get($map: $general, $key: 'morado');
+    font-size: 1.6em;
+}
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 25px;
+    }
+
+    a {
+        padding: 5px 12px;
+        text-decoration: none;
+        font-weight: bold;
+        color: map-get($map: $general, $key: 'negro');
+    }
+
+    a:hover {
+        color: #9D5DC3;
+    }
+}
+
+// HERO
+
+#hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 90vh;
+    background-image: linear-gradient($gradient),url("media/fondo.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    h1 {
+        color: map-get($map: $general, $key: 'blanco');
+    }
+
+    button{
+        font-size: 1.75em;
+    }
+}
+
+#somos-proya {
+    .container {
+        text-align: center;
+        padding: 200px 12px;
+    }
+}
+
+// CARACTERISTICAS
+
+#caracteristicas{
+    background-color: rgb(30,30,30);
+    color: map-get($map: $general, $key: 'blanco');
+    text-align: center;
+
+    .container {
+        padding: 150px 12px;
+    }
+
+        h2 {
+            margin-top: 0;
+            font-size: 3.5em;
+        }
+
+        p {
+            display: none;
+        }
+        .carta {
+            @extend .extend;
+            margin: 20px;
+            border-radius: 15px;
+        }
+    }
+
+.extend {
+    background-position: center center;
+    background-size: cover;
+    padding: 45px;
+}
+
+.carta:first-child{
+    background-image: linear-gradient($gradient)
+    ,url("media/importadas.jpg");
+}
+
+.carta.carta:nth-child(2){
+    background-image: linear-gradient($gradient)
+    ,url("media/precio.jpg");
+}
+
+.carta.carta:nth-child(3){
+    background-image: linear-gradient($gradient)
+    ,url("media/devolucion.jpg");
+}
+
+// COMPRA
+
+#compra-ya{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    color: map-get($map: $general, $key: 'negro');
+    height: 80vh;
+
+    h2 {font-size: 9vw;}
+
+    button { font-size: 5vw;}
+}
+
+// FOOTER
+
+footer {
+    background-color: #1E1E1E;
+
+    p {
+        margin: 0;
+        color: map-get($map: $general, $key: 'gris');
+        padding: 12px;
+    }
+
+    .container {
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+}
+
+// DESKTOP
+
+@media (min-width: 720px){
+
+// HEADER
+
+    header{
+        position: fixed;
+        width: 100%;
+
+        .container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        nav{
+            flex-direction: row;
+            padding-bottom: 0;
+            padding-right: 20px;
+        }
+    }
+
+    #hero {
+        h1 {
+            font-size: 5em;
+        }
+    }
+
+// QUIENES SOMOS
+
+    #somos-proya {
+        .container{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .texto{
+            width: 50%;
+            max-width: 600px;
+            text-align: initial;
+            display: flex;
+            padding-left: 30px;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h2{
+            margin-top: 0;
+        }
+
+        .img-container {
+            background-image: url("media/quienes-somos.jpg");
+            background-size: cover;
+            background-position: center center;
+            height: 500px;
+            width: 400px;
+        }
+    }
+
+// CARACTERISTICAS
+
+    #caracteristicas {
+
+        .programas{
+            display: flex;
+            justify-content: center;
+        }
+
+        p{
+            display: block;
+            margin-bottom: 30px;
+        }
+
+        h3{
+            margin-top: 0;
+        }
+
+        .carta{
+            padding: 15px;
+        }
+    }
+
+// COMPRA
+
+    #compra-ya {
+        h2{
+            font-size: 5vw;
+        }
+
+        button{
+            font-size: 3vw;
+        }
+    }
+}
